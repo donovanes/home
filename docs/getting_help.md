@@ -18,10 +18,8 @@ In most cases, chances are someone on the internet has already faced your same i
 
  ***Google and pages like Stack Overflow will be your new best friends***
 
-![image](https://user-images.githubusercontent.com/96526387/147144126-67f94f35-edd9-4b29-aeb9-c8b5c09faed0.png =250x250)
+Here are some additional resources you may try:
 
-
-Here are some other resources you may try:
 ## Semi-Live
 
 * **r/learnpython** this [subreddit](https://www.reddit.com/r/learnpython/) can be great for crowd-sourcing solutions to your coding issues. Some programmers prefer to use StackOverflow, but python subreddits are a bit friendlier for new coders. StackOverflow can have coding solutions that are difficult to understand for new programmers, and thus can leave you confused about how to adjust the code to fit your unique problem.
