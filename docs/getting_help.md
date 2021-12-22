@@ -15,8 +15,10 @@ To learn more about asking GOOD questions, check out [Real Python.](https://real
 
 ## Resources
 In most cases, chances are someone on the internet has already faced your same issue (or a very similar one). 
-**Google and pages like Stack Overflow are your best friends in your coding journey. **
-![image](https://user-images.githubusercontent.com/96526387/147144126-67f94f35-edd9-4b29-aeb9-c8b5c09faed0.png)
+
+ ***Google and pages like Stack Overflow will be your new best friends***
+
+![image](https://user-images.githubusercontent.com/96526387/147144126-67f94f35-edd9-4b29-aeb9-c8b5c09faed0.png =250x250)
 
 
 Here are some other resources you may try:
