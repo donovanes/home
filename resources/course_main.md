@@ -1,5 +1,5 @@
 
-## Resources for getting started with Programming
+## Programming for data analysis crash course
 
 #### The Owl, Problem Solving, and the Unix Workbench
 
