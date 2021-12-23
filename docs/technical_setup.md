@@ -3,7 +3,7 @@
 > See the [Technical FAQ page](tech_faq.md) if you run into snags and/or [report an issue](/issues).
 
 - [Services and platforms](#services-and-platforms)
-- [Windows](#windows)
+- [Windows](#windows-users)
 - [Text Editor](#text-editor)
 - [Shell terminal](#shell-terminal)
 - [Version control](#version-control)
@@ -126,3 +126,152 @@ pyenv global 3.7.6
 ### Mac
 
 Follow [these steps](https://docs.python-guide.org/starting/install3/osx/#install3-osx) but skip the installation of Homebrew, which should have been installed earlier when we set up [git](#version-control) (see above).
+
+
+## Configure
+
+Open a Terminal/shell. 
+
+Download and run our configuration script. You'll need to answer a few questions along the way.
+
+```
+cd ~
+#if you are on Linux install the following libraries
+sudo apt install curl
+sudo apt install geomview
+sudo apt install python3-pip
+
+#now run the configuration script
+curl -O https://raw.githubusercontent.com/climatepolicydata/home/main/setup/configure_system.py
+python3 configure_system.py
+```
+
+The configuration script will prompt you to peform a few additional steps:
+
+1. [Upload your ssh public key to GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
+```
+#to generate a new ssh public key
+ ssh-keygen -t ed25519 -C "your_github_email@example.com"
+#This creates a new SSH key, using the provided email as a label
+
+#When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+#Also press Enter when prompted to provide a secure passphrase.
+
+#Next, you need to add your key to the ssh agent
+#Ensure the ssh-agent is running
+eval "$(ssh-agent -s)"
+> Agent pid
+
+#add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.
+ssh-add ~/.ssh/id_ed25519
+
+#add your public key to your Github account: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+#open your public key to copy
+code ~/.ssh/id_ed25519.pub
+
+```
+
+3. [Create a GitHub API token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+    Give your token a name, set to No expiration, and define the scope as 'repo'.
+
+4. Open `code ~/.datakit/plugins/datakit-github/config.json` and replace `GITHUB_API_TOKEN` with the actual token from GitHub. Save the file.
+    ![image](https://user-images.githubusercontent.com/96526387/147269590-bda9a198-dace-4b5c-a5c8-b2725c96ddd1.png)
+    
+    
+> Congrats! If you are working from a Mac you're almost done. Skip to the [DataKit install](#datakit).
+
+
+### Required libraries on Linux
+
+* **Nodejs and Npm**
+   A Nodejs version 10.19.0 is available from the Ubunty 20.04 repository, but for our purposes you will need a version > 12.0.0. We will install Nodejs using nvm.
+   A shell script is available for the installation of nvm on the Ubuntu 20.04 Linux system.
+   ```
+   curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+   ```
+   The nvm installer script creates environment entry to login script of the current user. You can either logout and login again to load the environment or execute the below command to do the same.
+   ```
+   source ~/.profile
+   ```
+   You can install multiple node.js versions using nvm. 
+   Install the latest version of node.js. Here node is the alias for the latest version.
+   ```
+   nvm install node
+   ```
+   To install a specific version of node:
+   ```
+   nvm install 12.18.3
+   ```
+   Once you are done verify the installation by running:
+   ```
+   nodejs --version
+   ```
+   Make sure npm was installed by running:
+   ```
+   npm --version
+   ```
+   If not installed you can run the following:
+   ```
+   sudo apt install npm
+   ```
+* **Pyqt5**
+  ```
+  sudo apt-get install python3-pyqt5
+  ```
+* **Jupyter**
+  ```
+  pip3 install jupyter
+  ```
+
+### Editing your bash_profile or profile file
+At this point you may have gotten a warning similar to this one:
+```
+The script is installed in '' which is not on PATH.
+Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+```
+This will cause problems later on, to fix this follow these steps:
+1. On Linux
+* Open your ~/.profile file
+```
+code ~/.profile
+```
+* Ensure that the following code reflects the right path the warning pointed to
+```
+if [-d "$HOME/.bin"]; then
+  PATH="$HOME/bin:$PATH"
+fi
+```
+* This is setting PATH to include your private bin, where some packages are often installed. If you are getting the above warning you may need to adjust as follows. Rather than delete the previous code or edit directly, create a copy and comment out the old code, for backup. 
+```
+if [-d "$HOME/.local/.bin"]; then
+  PATH="$HOME/.local/bin:$PATH"
+fi
+```
+* Save the file and go back to the terminal
+```
+source ~/.profile
+```
+2. On Mac
+The same error may occur when working from a Mac, in this case you'll want to add to your .bash_profile file the following code:
+```
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+```
+
+## DataKit
+> Before this step, make sure you've completed *all* [configuration](#configure) described above
+
+[DataKit](https://datakit.ap.org/) is a command-line tool we'll use to manage code and data. It provides a standardized structure for projects and allows us to easily submit code to GitHub.
+
+Run the following command to install DataKit:
+```
+pip3 install datakit-core datakit-project datakit-github pipenv PyGithub
+#this will take a while
+
+```
+Follow [these instructions](docs/datakit.md) to complete the DataKit setup and create your first project.
+
+
