@@ -18,7 +18,7 @@
 * [DataKit overview](docs/datakit.md)
 
 #### APIs
-* [Working with APIs](/docs/python/working_with_apis.md
+* [Working with APIs](/docs/python/working_with_apis.md)
 
 #### Python Functions
 * [The Art of Writing Functions](/docs/python/art_of_functions.md)
