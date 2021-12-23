@@ -12,10 +12,8 @@ Main landing page
 
 ### Resources
 * [Bookshelf](docs/bookshelf.md) - recommended books, tutorials, cheatsheets, etc.
-* [Resources for getting started in Programming](resources/resources_main.md)
+* [Resources for getting started in Programming](resources/course_main.md)
 
 ## Key data projects
 
 ### CP3
-
-
