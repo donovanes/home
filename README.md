@@ -17,5 +17,7 @@ Main landing page
 ## Key data projects
 
 ### CP3
+Main project repo for the [CP3 project](https://github.com/climatepolicydata/cp3)
+
 
 
