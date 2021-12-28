@@ -10,7 +10,7 @@ Main landing page
 
 * [Getting Help](docs/getting_help.md) - Resources and strategies for finding help.
 * [Glossary](docs/glossary.md) - common technical terms.
-* 
+
 * [Python](docs/python.md) - overview, tutorials, etc.
 * [Programming for Data Analysis - Crash Course](resources/course_main.md)
 
