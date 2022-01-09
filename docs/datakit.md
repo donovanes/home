@@ -8,7 +8,7 @@
 
 ## Overview
 
-[DataKit][], an open-source command-line tool created by The Associated Press. DataKit was [designed in a team environment][] to bring sanity to data projects. Among other things, it helps standardize project structures, easily share code and data with teammates, and even publish data as part of story packages.
+[DataKit][], an open-source command-line tool created by the Associated Press. DataKit was [designed in a team environment][] to bring sanity to data projects. Among other things, it helps standardize project structures, easily share code and data with teammates, and even publish data as part of story packages.
 
 [DataKit]: https://datakit.ap.org/
 [designed in a team environment]: https://www.rjionline.org/stories/ap-datakit-intro
@@ -20,7 +20,7 @@ DataKit will help us streamline our workflow while applying best practices from 
 * Create standard project structures for all code work
 * Use [virtual environments](https://docs.python.org/3/tutorial/venv.html) for Python (using [pipenv](https://docs.python-guide.org/dev/virtualenvs/))
 * Save code and data in [version control](https://en.wikipedia.org/wiki/Version_control) ([git][])
-* Publish our work to GitHub, making it easy to open-source if we choose
+* Publish our work to GitHub, making it easy to collaborate with other analysts and to open-source if we choose. 
 * Easily share our work with colleagues
 
 [git]: https://git-scm.com/book/en/v2
