@@ -6,6 +6,7 @@ Recommended books, tutorials, cheatsheets, etc. Organized by language.
 * [Hitchhiker's Guide to Python](https://docs.python-guide.org/) - a compendium of best practices and advice
 * [Automate the Boring Stuff](https://automatetheboringstuff.com/) - solid, human-friendly intro to basic Python programming
 * [The Python Standard Library](https://docs.python.org/3/library/index.html) - official docs for the libraries built into Python
+* [First Python Notebook](https://www.firstpythonnotebook.org/)- A step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
 ## Unix shell
 
